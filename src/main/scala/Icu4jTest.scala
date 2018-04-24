@@ -1,3 +1,4 @@
+import bd.util.Icu4j
 import org.apache.spark.sql.hive.HiveContext
 import org.apache.spark.{SparkConf, SparkContext}
 

@@ -15,15 +15,6 @@ object Family {
     val sc = new SparkContext(conf)
     val hiveContext = new HiveContext(sc)
     import hiveContext.implicits._
-//    hiveContext.sql("insert overwrite table graphx.pm select 0,0,phone,mail from nimbuzz.nimbuzz_user2")
-//    hiveContext.sql("insert overwrite table graphx.phones select 1,phone from graphx.pm where phone<>'null'")
-//    hiveContext.sql("insert overwrite table graphx.mails select 1,mail from graphx.pm where mail<>'null'")
-//    hiveContext.sql("insert overwrite table graphx.phones select row_number() over (order by phone),phone from graphx.phones group by phone")
-//    hiveContext.sql("insert overwrite table graphx.mail select row_number() over (order by mail) + t.p_max,mail from graphx.mail cross join (select max(id) p_max from graphx.phones) t group by mail ")
-//
-//    hiveContext.sql("insert overwrite table graphx.pm select id,0,phone,mail from graphx.pm a left join graphx.phones b on a.phone=b.phone")
-//    hiveContext.sql("insert overwrite table graphx.pm select pl,id,phone,mail from graphx.pm a left join graphx.mails b on a.mail=b.mail")
-
 
     val vertext = hiveContext.sql("select id,uid from spark.family_vertex")
     val vertext_rdd = vertext.rdd.map(f=> (f.getLong(0),(f.getString(1)))).cache()

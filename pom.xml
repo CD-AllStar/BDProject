@@ -117,6 +117,15 @@
             <version>1.6.0-cdh5.12.1</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-streaming -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming_2.11</artifactId>
+            <version>1.6.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.ansj/ansj_seg -->
         <dependency>
             <groupId>org.ansj</groupId>
@@ -159,7 +168,12 @@
             <version>1.2.0</version>
         </dependency>
 
-
+        <!-- https://mvnrepository.com/artifact/com.ibm.icu/icu4j -->
+        <dependency>
+            <groupId>com.ibm.icu</groupId>
+            <artifactId>icu4j</artifactId>
+            <version>60.2</version>
+        </dependency>
 
 
     </dependencies>
